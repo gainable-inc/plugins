@@ -1,6 +1,10 @@
 # Gainable — Claude Skill
 
-For Claude on the web, the desktop app, and **Cowork** — the surfaces with no plugin to install.
+**For Claude Chat only** (web and desktop). Plugins are not used in Chat, which is the only reason
+this exists as a separate package.
+
+**In Cowork, install the plugin instead** — Customize → Plugins → Add marketplace →
+`gainable-inc/plugins`. It is one step and brings the connector with it, which this does not.
 
 It is the same text the Claude Code and Codex plugins carry: which tool to reach for, how to relay
 the connector's questions back to you unanswered, and the handful of rules that decide whether the
@@ -10,8 +14,6 @@ app comes out right.
 
 Upload **`gainable-skill.zip`** at [claude.ai/customize/skills](https://claude.ai/customize/skills)
 — click **+**, then **Create skill**, then **Upload a skill**.
-
-In Cowork the same directory is under **Customize** in the left sidebar.
 
 Then make sure the skill's toggle is **on**. Uploaded skills are account-wide but can be switched
 off individually, and a disabled skill is not available to Claude.
