@@ -28,9 +28,8 @@ folder belongs to, and the MCP server registration.
 /plugin install gainable
 ```
 
-Includes the same skill and hook. **Check `codex/README.md` for whether you also need to add the
-connector to `~/.codex/config.toml` by hand** — that depends on what the Codex plugin format
-supports, and the answer is written down there rather than guessed at here.
+Also one step — the connector is bundled here too. Sign-in happens on first use, and Codex will ask
+you to trust the session hook before it runs. See `codex/README.md`.
 
 ## Claude (web, desktop, Cowork)
 
@@ -54,6 +53,24 @@ gainable/                         Claude Code plugin
 codex/                            Codex plugin
 skill/                            Claude Skill
 ```
+
+### The two `.mcp.json` files are not the same shape — do not unify them
+
+`gainable/.mcp.json` (Claude Code) wraps the server map in `mcpServers`:
+
+```json
+{ "mcpServers": { "gainable": { "type": "http", "url": "…" } } }
+```
+
+`codex/.mcp.json` is the bare map, referenced by `"mcpServers": "./.mcp.json"` in its manifest:
+
+```json
+{ "gainable": { "type": "http", "url": "…", "auth": "oauth" } }
+```
+
+Give Codex the wrapped form and it registers a server literally named `mcpServers`. Both runtimes
+**ignore unrecognised keys silently**, so a mistake here does not error — it just quietly fails to
+connect.
 
 `SKILL.md` is **generated**, not edited here. It is written by `scripts/release-plugins.js` in the
 Gainable engine repo, from a single source, so the three copies cannot drift from each other or from

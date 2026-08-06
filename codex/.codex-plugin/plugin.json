@@ -1,7 +1,7 @@
 {
   "name": "gainable",
   "version": "1.0.0",
-  "description": "Build and change Gainable apps from Codex. Bundles the gainable skill and a session-start hook that orients on the project the folder belongs to. Requires the Gainable MCP connector — see the plugin README.",
+  "description": "Build and change Gainable apps from Codex. Registers the Gainable MCP connector, bundles the gainable skill, and orients each session on the project the folder belongs to.",
   "author": {
     "name": "Gainable",
     "url": "https://gainable.com"
@@ -17,11 +17,11 @@
     "mcp"
   ],
   "skills": "./skills/",
-  "hooks": "./hooks/hooks.json",
+  "mcpServers": "./.mcp.json",
   "interface": {
     "displayName": "Gainable",
     "shortDescription": "Build & change Gainable apps from Codex",
-    "longDescription": "Drive Gainable from Codex: build a new app from an idea or a spreadsheet, change one that already exists, publish it, and manage who can use it. The work happens server-side through the Gainable MCP connector — there is no local codebase to edit. This plugin supplies the steering: which tool to reach for, how to relay the connector's questions back to you unanswered, and which Gainable project the current folder belongs to.",
+    "longDescription": "Drive Gainable from Codex: build a new app from an idea or a spreadsheet, change one that already exists, publish it, and manage who can use it. The work happens server-side through the Gainable MCP connector — there is no local codebase to edit. This plugin registers that connector, and supplies the steering: which tool to reach for, how to relay the connector's questions back to you unanswered, and which Gainable project the current folder belongs to.",
     "developerName": "Gainable",
     "category": "Productivity",
     "capabilities": [
