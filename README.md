@@ -103,20 +103,6 @@ claude plugin validate .
 claude plugin validate ./gainable --strict
 ```
 
-## Listing in Anthropic's directory
-
-Submitting to the [plugin directory](https://claude.com/plugins-for/cowork) would drop the
-`Add marketplace` step for everyone — it is surfaced automatically in both Cowork and Claude Code.
-Requirements: a **public** repo (this one), `claude plugin validate` clean, and a submitter with
-directory-management access on a Team/Enterprise org, or a Developer/Admin/Owner role on a Console
-org. Submit at
-[claude.ai/admin-settings/directory/submissions/plugins/new](https://claude.ai/admin-settings/directory/submissions/plugins/new)
-or [platform.claude.com/plugins/submit](https://platform.claude.com/plugins/submit). After
-publishing, pushes to this repo are mirrored automatically — no re-submission.
-
-The **Connectors Directory** is separate and covers the MCP connector itself. Listing the connector
-there also reduces the warnings shown when installing this plugin.
-
 ## Contributing
 
 Open an issue. Changes to the skill text belong in the engine repo, not here — an edit made directly
