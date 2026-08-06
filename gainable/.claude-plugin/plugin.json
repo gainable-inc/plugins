@@ -1,0 +1,19 @@
+{
+  "name": "gainable",
+  "version": "1.0.0",
+  "description": "Build and change Gainable apps from Claude Code. Registers the Gainable MCP connector, bundles the gainable skill, and orients each session on the project the folder belongs to.",
+  "author": {
+    "name": "Gainable",
+    "url": "https://gainable.com"
+  },
+  "homepage": "https://gainable.com",
+  "repository": "https://github.com/gainable-inc/plugins",
+  "license": "SEE LICENSE IN LICENSE",
+  "keywords": [
+    "gainable",
+    "gaia",
+    "no-code",
+    "app-builder",
+    "mcp"
+  ]
+}

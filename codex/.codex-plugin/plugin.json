@@ -1,0 +1,40 @@
+{
+  "name": "gainable",
+  "version": "1.0.0",
+  "description": "Build and change Gainable apps from Codex. Bundles the gainable skill and a session-start hook that orients on the project the folder belongs to. Requires the Gainable MCP connector — see the plugin README.",
+  "author": {
+    "name": "Gainable",
+    "url": "https://gainable.com"
+  },
+  "homepage": "https://gainable.com",
+  "repository": "https://github.com/gainable-inc/plugins",
+  "license": "SEE LICENSE IN LICENSE",
+  "keywords": [
+    "gainable",
+    "gaia",
+    "no-code",
+    "app-builder",
+    "mcp"
+  ],
+  "skills": "./skills/",
+  "hooks": "./hooks/hooks.json",
+  "interface": {
+    "displayName": "Gainable",
+    "shortDescription": "Build & change Gainable apps from Codex",
+    "longDescription": "Drive Gainable from Codex: build a new app from an idea or a spreadsheet, change one that already exists, publish it, and manage who can use it. The work happens server-side through the Gainable MCP connector — there is no local codebase to edit. This plugin supplies the steering: which tool to reach for, how to relay the connector's questions back to you unanswered, and which Gainable project the current folder belongs to.",
+    "developerName": "Gainable",
+    "category": "Productivity",
+    "capabilities": [
+      "Read",
+      "Write"
+    ],
+    "websiteURL": "https://gainable.com",
+    "termsOfServiceURL": "https://www.gainable.dev/terms",
+    "defaultPrompt": [
+      "Build a CRM app for tracking SaaS deals with Gainable.",
+      "Add KPI cards to the sponsors view.",
+      "List my Gainable apps."
+    ],
+    "brandColor": "#422ad5"
+  }
+}

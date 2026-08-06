@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json.schemastore.org/claude-code-marketplace.json",
+  "name": "gainable",
+  "version": "1.0.0",
+  "description": "Gainable harness steering.",
+  "owner": {
+    "name": "Gainable Inc"
+  },
+  "plugins": [
+    {
+      "name": "gainable",
+      "description": "Build and change Gainable apps from Claude Code. Registers the Gainable MCP connector, bundles the gainable skill, and orients each session on the project the folder belongs to.",
+      "version": "1.0.0",
+      "source": "./gainable",
+      "category": "development"
+    }
+  ]
+}

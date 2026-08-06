@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "gainable": {
+      "type": "http",
+      "url": "https://build.gainable.dev/mcp"
+    }
+  }
+}
