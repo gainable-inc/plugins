@@ -33,7 +33,11 @@ you to trust the session hook before it runs. See `codex/README.md`.
 
 ## Claude (web, desktop, Cowork)
 
-Install the Skill in `skill/`. See `skill/README.md`.
+Upload `skill/gainable-skill.zip` at [claude.ai/customize/skills](https://claude.ai/customize/skills)
+— **+** → **Create skill** → **Upload a skill** — and make sure its toggle is on. Skills are
+account-wide and work in Cowork as well as chat. See `skill/README.md`.
+
+Unlike the two plugins, this does not bring the connector with it; add that to Claude separately.
 
 ## Connecting to something other than production
 
@@ -51,7 +55,8 @@ claude mcp add --transport http gainable-staging https://staging-build.gainable.
 .agents/plugins/marketplace.json  Codex marketplace
 gainable/                         Claude Code plugin
 codex/                            Codex plugin
-skill/                            Claude Skill
+skill/gainable/                   Claude Skill source
+skill/gainable-skill.zip          …packed for upload (built, not edited)
 ```
 
 ### The two `.mcp.json` files are not the same shape — do not unify them
