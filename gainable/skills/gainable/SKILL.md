@@ -41,7 +41,8 @@ before creating anything — that choice decides which account the app lands in.
 | Situation | Tool |
 |---|---|
 | A **new** app — from an idea, a spec, or a spreadsheet | `import` (if there's a file) → `build` |
-| Changing an app that is **already built** — add a field, fix a view, change a layout, fix a bug | `chat` |
+| Changing an app that is **already built** — add a field, fix a view, change a layout, rename or add a page, fix a bug | `chat` |
+| Working with the data itself — what datasets exist, what is in one, creating one, keeping one fresh | `dataset_list` → `dataset_records`, `dataset_schema` → `dataset_sync` |
 | Who may open an app, and who is on it | `app_access`, `app_users` |
 | Getting someone onto **Gainable itself**, as a builder or an app user | `account_users` |
 | Writing the code yourself — **only** when explicitly asked for | `code_context` → `code_push` |
@@ -56,6 +57,9 @@ they create a project.
 **A spreadsheet is never a spec** — it goes through `import`, never pasted into `build`. A spec
 DOCUMENT is the opposite: paste its full text into `build`, because the harness cannot read files
 and a path makes it design from generic domain knowledge instead.
+
+The `dataset_*` tools need the `datasets` scope, ticked at consent. If they are not in your list,
+that is why — say so rather than reaching for the data another way. `import` does not need it.
 
 ## Say which app you mean
 
@@ -125,4 +129,20 @@ requests belong to `chat` even though they are about app code.
 They need the `code` scope, granted by ticking the box at consent. If those tools are not in your
 list, that is why; say so rather than working around it. Their protocol — what is writable, when to
 validate, how `baseHash` catches a stale read — lives in the tools' own descriptions and errors.
+
+## Datasets
+
+`dataset_list` shows what exists and which apps use each one; `dataset_records` reads the rows;
+`dataset_schema` gives the write contract to follow before writing any collector. Both listings are
+paged — read `hasMore` rather than assuming the first page is everything.
+
+`dataset_sync` both creates and replaces, from rows, sheets or a spreadsheet; with no payload at all
+it re-fetches from the upstream provider. Its default is a FULL REPLACE — rows absent from the
+payload are deleted — and it **never creates**: an unmatched name is an error, because the server
+cannot tell a typo from a new dataset and would silently make a duplicate. `action:"create"` always
+makes a new one, so re-running the same spreadsheet gives a fresh dataset every time (deliberate,
+not a bug); `createIfMissing:true` is the middle road for a collector that seeds itself on run 1.
+
+**`dataset_delete` cannot be undone** and exports nothing first. It takes `confirm` set to the
+dataset's exact name; one that any app still uses is refused outright, naming them.
 
