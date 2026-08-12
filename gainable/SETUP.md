@@ -25,6 +25,16 @@ and sharing all work with neither ticked.
 If more than one Gainable account is available, the picker chooses which account this connection
 acts on. That decides where apps land, so ask rather than picking.
 
+## If the Gainable tools appear twice
+
+The connectors on someone's claude.ai account surface here too, so a user who added Gainable under
+**Connectors** and then installed this plugin has two connections to the same server under different
+tool names. A tool name does not say which server it reaches, so this looks exactly like a genuine
+staging/production pair, and the rule to ask which connector to use fires on every build.
+
+Name what has happened and have them turn one off — the plugin's registration under `/mcp`, or the
+connector on claude.ai, whichever they use less. Do not settle it by quietly picking one.
+
 ## If a tool is missing later
 
 A missing `code_push` or `account_users` is almost always an ungranted scope, not a broken install.

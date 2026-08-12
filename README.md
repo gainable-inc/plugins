@@ -34,6 +34,17 @@ Everywhere else, the plugin is one step and brings the connector with it.
 
 Restart, then `/mcp` to sign in. Same package as Cowork — plugins share one format across both.
 
+## Already added Gainable under Connectors?
+
+Then turn one of the two off. Claude Code and Cowork both surface the connectors on your claude.ai
+account, and the plugin's own registration sits alongside them — two connections to the same server,
+each with its own sign-in to keep alive.
+
+Left as-is it is more than clutter. The tools appear twice under different names, and a tool name
+says nothing about which server it reaches, so this is indistinguishable from a real staging/production
+pair — which is exactly the case the skill is told to resolve by asking. You get that question before
+every build, about a difference that isn't there.
+
 ## Claude Chat (web, desktop)
 
 Upload `skill/gainable-skill.zip` at [claude.ai/customize/skills](https://claude.ai/customize/skills)
