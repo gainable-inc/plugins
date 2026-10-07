@@ -91,8 +91,8 @@ is not this connector's server, ignore the file and say so.
 ## Long operations
 
 `build action:"run"` takes 90–180 seconds and `chat` can take over a minute. Either may return
-**`outcome:"running"`** before the work is done — that is not a failure and not a timeout. Call
-`action:"status"` to keep watching, as many times as needed.
+**`outcome:"running"`** — not a failure, not a timeout. Call `action:"status"` to keep watching, as
+often as needed (after a reconnect, `chat` also wants the `cursor` its running result carried).
 
 **Never re-run `build action:"run"`, and never re-send a `chat` message, to check on progress.**
 Turns keep running server-side regardless of your connection, so a repeat call is not a retry — it
