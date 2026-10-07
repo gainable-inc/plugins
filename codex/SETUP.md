@@ -37,5 +37,7 @@ reconnect.
 
 ## Pointing somewhere other than production
 
-The bundled registration is `https://build.gainable.dev/mcp`. For staging or a self-hosted instance,
-add that server separately; this plugin's skill applies to it just the same.
+The bundled registration is `https://build.gainable.dev/mcp`, and Codex cannot change its URL. For
+staging or a self-hosted instance, add that server separately in `~/.codex/config.toml`; this
+plugin's skill applies to it just the same. To use only that instance, switch the bundled one off
+with `[plugins."gainable@gainable".mcp_servers.gainable]` / `enabled = false` (see `README.md`).

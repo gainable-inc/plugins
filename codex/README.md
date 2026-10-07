@@ -24,12 +24,22 @@ the one-line project orientation will not appear until you do. Nothing else depe
 
 ## Pointing at staging, or a self-hosted instance
 
-The bundled registration is production. To add another, put it in `~/.codex/config.toml` yourself:
+The bundled registration is production, and Codex has no way to change its URL — it does not expand
+environment variables in a remote `url`, and user config can only switch a plugin's server on or
+off. To use another instance, add it in `~/.codex/config.toml` yourself:
 
 ```toml
 [mcp_servers.gainable-staging]
 url = "https://staging-build.gainable.dev/mcp"
 auth = "oauth"
+```
+
+To use *only* that instance, also switch the bundled one off in the same file, so the model never
+has two Gainable connectors to choose between:
+
+```toml
+[plugins."gainable@gainable".mcp_servers.gainable]
+enabled = false
 ```
 
 Writing that file does **not** start the OAuth flow. Trigger it explicitly:

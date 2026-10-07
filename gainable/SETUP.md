@@ -47,5 +47,7 @@ reconnect.
 
 ## Pointing somewhere other than production
 
-The bundled registration is `https://build.gainable.dev/mcp`. For staging or a self-hosted instance,
-add that server separately; this plugin's skill applies to it just the same.
+The bundled registration is `https://build.gainable.dev/mcp`, overridable with the `GAINABLE_MCP_URL`
+environment variable (read when the session starts, e.g. `GAINABLE_MCP_URL=https://staging-build.gainable.dev/mcp claude`).
+To keep production alongside staging or a self-hosted instance, add that server separately instead;
+this plugin's skill applies to it just the same.

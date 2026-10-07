@@ -64,12 +64,23 @@ session hook before it runs. See `codex/README.md`.
 
 ## Connecting to something other than production
 
-The bundled registration points at `https://build.gainable.dev/mcp`. For staging, or a self-hosted
-instance, add that one yourself — the steering applies to it just the same:
+The bundled registration points at `https://build.gainable.dev/mcp`. On Claude Code and Cowork,
+set `GAINABLE_MCP_URL` before launching to point the bundled connector somewhere else:
+
+```
+GAINABLE_MCP_URL=https://staging-build.gainable.dev/mcp claude
+```
+
+The variable is read when the session starts; unset, it falls back to production. To keep
+production connected alongside, add the other instance as a second server instead — the steering
+applies to it just the same:
 
 ```
 claude mcp add --transport http gainable-staging https://staging-build.gainable.dev/mcp
 ```
+
+Codex cannot change the bundled URL; add the other instance in `~/.codex/config.toml` and, to use it
+alone, switch the bundled server off. See `codex/README.md`.
 
 ## What's in here
 
